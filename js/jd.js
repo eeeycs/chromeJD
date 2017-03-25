@@ -18,11 +18,21 @@ $(function(){
 function sendCookie(){
 	var reportValue="";
 	var strCookie = document.cookie;
+	// reportValue=strCookie;
+
 	var arrCookie = strCookie.split("; ");
 	for(var i = 0; i < arrCookie.length; i++){
 		var arr = arrCookie[i].split("=");
-		reportValue=reportValue+"ssid="+arr[0]+";unpl="+arr[1]+";";
+		if(arr[0]=="ssid"){
+			arr1=arr[1].replace(/\"/g,"");
+			// console.log(arr1);
+			reportValue=reportValue+arr[0]+"="+arr1+";";
+			
+		}else{
+			reportValue=reportValue+arr[0]+"="+arr[1]+";";
+		}
 	}
+	
 	console.log(reportValue);
 	chrome.extension.sendMessage({action:'getItem',key:"userInfo"},function(d){
 		if(d==null){
@@ -196,14 +206,15 @@ function getGoodsInfoList(){
 
 				var mobileGoodRatePrice=content.goodRateInfo.mobileGoodRatePrice;
 				var goodRateCnt=content.goodCommentInfo.goodRateCnt;
+				//console.log(goodRateCnt);
 				var yyhtml='<div style="color:#008B00;font-weight:bold;">佣金:'+mobileGoodRatePrice+'</div>';
 				var hphtml='<a style="color:#008B00;font-weight:bold;">'+goodRateCnt+'好评率</a>';
 				var yydiv=$(nowLiItem).find("div.p-price");
 				var hpdiv=$(nowLiItem).find("div.p-icons");
-				if(mobileGoodRatePrice!="-"&&mobileGoodRatePrice!=""){
+				//if(mobileGoodRatePrice!="-"&&mobileGoodRatePrice!=""){
 					yydiv.append(yyhtml);
 					hpdiv.append(hphtml);
-				}
+				//}
 
 			});
 			console.log(count+"count");
