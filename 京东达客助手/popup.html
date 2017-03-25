@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style/min.css">
+    <link rel="stylesheet" type="text/css" href="style/bootstrapValidator.min.css">
+    <link rel="stylesheet" type="text/css" href="style/popup.css">
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrapValidator.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+
+
+</head>
+<body>
+    <div id="prefix">
+
+        <div id="divlogin">
+            <div class="page-main">
+                <div id="metahead">
+                    <!-- <button type="button" class="btn btn-success" id="testBtn">test</button>
+                    <button type="button" class="btn btn-success" id="loginBtn">登录</button> -->
+                    
+                </div>
+
+
+
+                <div class="form-horizontal" role="form" id="login">
+                    <div class="form-group">
+                        <label for="userId" class="col-xs-3 control-label">用 户 名 <span class="redrequired">*</span></label>
+                        <div class="col-xs-9">
+                            <input  type="text" class="form-control input-sm" id="userId" name="userId" placeholder="用户名">
+                            <span id="userIdSpan" style="color:red;margin:5px;font-size:12px;"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPwd" class="col-xs-3 control-label">密码 <span class="redrequired">*</span></label>
+                        <div class="col-xs-9">
+                            <input type="password" class="form-control input-sm" id="userPwd" name="userPwd" placeholder="密码">
+                            <span id="userPwdSpan" style="color:red;margin:5px;font-size:12px;"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-9">
+                            <button id="myloginbtn" type="submit" class="btn btn-primary">登录</button>
+                            <button type="button" class="btn btn-info" id="registereBtn">注册</button>
+                            <!-- <a href="javascript:;" id="registereLink" style="padding-left:5px;">还没有帐号，点击注册</a> -->
+                        </div>
+                        <p class="col-xs-offset-3 col-xs-9 message" id="loginmessage"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="divinfo" style="display:none">
+            <div class="page-content">
+                <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <h3 class="panel-title">个人信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>你好:<span id="username" style="color: red"></span> 欢迎使用<span id="softName"></span>
+                            <button type="button" class="btn btn-primary btn-xs" id="logout" style="margin-left: 10px">退出</button></p>
+                            <p>剩余积分：<span id="ponit" style="color: red"></span></p>
+                            <p>我的推荐码：<span id="myRecCode"  style="color: red"></span></p>
+                            <p>推荐人数：<span id="myRecCount"  style="color: red"></span></p>
+                            <p>奖励积分：<span id="myRecCodePoint"  style="color: red"></span></p>
+                            <p>最后一次登录时间：<span id="lastlogintime"  style="color: red"></span></p>
+                        </div>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">交流</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div style="float:left;"><img src="http://tbcms.oss-cn-shanghai.aliyuncs.com/qqgroup.png" width="180" /></div>
+                            <div style="float:left;">
+                            <div style="margin-top:50px;padding:5px;">加群获取更多插件</div>
+                            <div style="padding:5px;">加群交流达人心得</div>
+                            <div style="padding:5px;">加群获取内部消息</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </body>
+        </html>
